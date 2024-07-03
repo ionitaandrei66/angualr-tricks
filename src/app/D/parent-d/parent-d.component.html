@@ -1,0 +1,49 @@
+<main style="height: 100%; width: 100%">
+    <section title="Event Bubbling" style="position:absolute;top: 0;width: 400px;height: 400px; background-color: wheat">
+        <h4>Event Bubbling</h4>
+    <p>
+        Event bubbling is a concept in JavaScript (and consequently in Angular, which is built on JavaScript) where an event that is triggered on a nested element is propagated up through its ancestor elements in the DOM hierarchy. This allows you to handle the event at multiple levels in the DOM tree.
+    </p>
+        <div style="width: 100px; height: 100px; background-color: blue" (click)="handleOuterDivClick()">
+            <h1>Outer Div</h1>
+            <div (click)="handleInnerDivClick($event)">
+                <h2>Inner Div</h2>
+                <button (click)="handleButtonClick()">Click Me</button>
+            </div>
+        </div>
+    </section>
+
+    <section title="Capturing/Trickling" style="position:absolute;bottom: 0;right: 0;width: 400px;height: 400px; background-color: #ffcf7b">
+        <h4>Capturing/Trickling</h4>
+        <p>
+            Capturing Phase: In this phase, the event starts from the root of the DOM tree and travels down to the target element. Event handlers attached at the higher level of the DOM tree are invoked first, and as the event descends, it reaches the target element.
+        </p>
+        <div style="width: 100px; height: 100px; background-color: #8888b4" >
+            <div #ThreeButton>
+                <h1>Outer Div</h1>
+                <div #TwoButton>
+                    <h2>Inner Div</h2>
+                    <div #OneButton>Click Me</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section title="Capturing/Trickling" style="position:absolute;bottom: 0;left: 0;width: 400px;height: 400px; background-color: #c0882e">
+        <h4>Capturing/Trickling</h4>
+        <p>
+            Event delegation is a technique in web development where a single event handler is attached to a common ancestor of multiple elements, rather than attaching individual event handlers to each element. This is especially useful when you have a large number of similar elements (e.g., a list of items) and you want to handle events for all of them efficiently.
+            In Angular, event delegation can be implemented using event binding and leveraging the event object to determine which specific element within the common ancestor was interacted with.
+            </p>
+        <div style="width: 100px; height: 100px; background-color: #6d297e" >
+            <ul (click)="handleListClick($event)">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+                <li>Item 5</li>
+            </ul>
+        </div>
+    </section>
+
+
+</main>

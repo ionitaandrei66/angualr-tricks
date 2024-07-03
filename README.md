@@ -5,3 +5,24 @@ A:
 
 B:
 -> transfer function to child and the child use it
+
+C:
+-> SVG in angular, is copy paste from angular doc.
+
+D:
+-> Event Bubbling, Capturing/Trickling, and Event Delegation in Details
+
+E:
+-> Hydration
+
+G:
+-> Component factory
+
+H:
+-> Signals && signals inputs
+
+Z:
+-> Component Directive(tha comes with html template)
+
+U:
+-> SSR only for a side of app or full app
